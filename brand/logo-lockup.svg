@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 300" role="img" aria-label="Devine Health">
+  <title>Devine Health logo</title>
+  <g transform="translate(60,0)">
+    <path fill="#1C6E86" d="M120 196 C 104 182 82 176 66 158 C 55 145 54 128 66 116 C 86 132 108 150 120 172 Z"/>
+    <path fill="#3FA9C4" d="M120 196 C 136 182 158 176 174 158 C 185 145 186 128 174 116 C 154 132 132 150 120 172 Z"/>
+    <circle cx="120" cy="52" r="17" fill="#E0A82E"/>
+    <path fill="#E0A82E" d="M120 78 C 100 80 88 96 92 116 C 95 132 110 140 120 156 C 130 140 145 132 148 116 C 152 96 140 80 120 78 Z"/>
+  </g>
+  <text x="180" y="242" text-anchor="middle"
+        font-family="'Cormorant Garamond','Playfair Display',Georgia,serif"
+        font-size="58" font-weight="600" fill="#0E3A5F" letter-spacing="1">Devine</text>
+  <text x="180" y="276" text-anchor="middle"
+        font-family="'Inter','Helvetica Neue',Arial,sans-serif"
+        font-size="20" font-weight="500" fill="#0E3A5F" letter-spacing="10">HEALTH</text>
+</svg>
