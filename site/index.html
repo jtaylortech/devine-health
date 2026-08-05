@@ -11,10 +11,10 @@
   <meta property="og:title" content="Devine Health — Consumer Directed Services">
   <meta property="og:description" content="Empowering Independence Through Compassionate Care.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="../brand/og-image.png">
+  <meta property="og:image" content="assets/og-image.png">
 
-  <link rel="icon" href="../brand/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,11 +57,12 @@
     </a>
     <nav aria-label="Primary">
       <ul class="nav-links" id="navLinks">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#why">Why Devine</a></li>
-        <li><a href="#how">How It Works</a></li>
-        <li><a href="#careers">Careers</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
     <div class="nav-cta">
@@ -222,7 +223,7 @@
         <p>Do meaningful work close to home. If you&rsquo;re caring, dependable, and want to make a real difference, we&rsquo;d love to meet you &mdash; family members providing care may qualify too.</p>
       </div>
       <div class="btn-row">
-        <a class="btn btn--gold" href="#contact">Apply Now</a>
+        <a class="btn btn--gold" href="careers.html">Apply Now</a>
       </div>
     </div>
   </div>
@@ -260,7 +261,7 @@
       </div>
 
       <!-- Contact form (prototype: does not send; Squarespace form handles delivery on live site) -->
-      <form class="form" id="contactForm" novalidate>
+      <form class="form" id="contactForm" data-prototype novalidate>
         <div class="field">
           <label for="cf-name">Full name</label>
           <input id="cf-name" name="name" type="text" autocomplete="name" required>
@@ -339,28 +340,6 @@
   </div>
 </footer>
 
-<script>
-  // Mobile nav toggle
-  (function(){
-    var t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
-    if(t&&l){t.addEventListener('click',function(){
-      var open=l.classList.toggle('open');
-      t.setAttribute('aria-expanded',open?'true':'false');
-      t.setAttribute('aria-label',open?'Close menu':'Open menu');
-    });
-    l.addEventListener('click',function(e){if(e.target.tagName==='A'){l.classList.remove('open');t.setAttribute('aria-expanded','false');}});}
-  })();
-  // Prototype form handler (no backend)
-  (function(){
-    var f=document.getElementById('contactForm'),s=document.getElementById('formStatus');
-    if(f){f.addEventListener('submit',function(e){e.preventDefault();
-      if(!f.checkValidity()){s.textContent='Please fill in your name, phone, and email.';return;}
-      s.textContent='Thanks! (Preview only — connect a Squarespace form to receive this message.)';
-      f.reset();
-    });}
-  })();
-  // Current year
-  document.getElementById('year').textContent=new Date().getFullYear();
-</script>
+<script src="main.js" defer></script>
 </body>
 </html>

@@ -39,14 +39,32 @@ intended look.
 | `og-image.png` | 1200×630 social-share image (navy, logo + tagline). |
 | `colors.md` | Brand color tokens + typography notes. |
 
-### `site/` — homepage prototype
-- `index.html` — full responsive homepage (single page, anchor navigation).
-- `styles.css` — brand-tokened, mobile-first stylesheet (responsive to 320px, WCAG-AA contrast).
-- `assets/` — reserved for real photography when supplied.
+### `site/` — website prototype (multi-page)
+- `index.html` — homepage (hero, services, why, how, testimonials, careers band, contact).
+- `about.html` — story, "What is CDS?", values.
+- `services.html` — detailed section per service.
+- `careers.html` — Become a Caregiver + full employment application form.
+- `faq.html` — accessible accordion of common CDS questions.
+- `contact.html` — contact info, map placeholder, contact form.
+- `styles.css` — brand-tokened, mobile-first stylesheet (responsive to 320px, WCAG-AA).
+- `main.js` — shared nav toggle, FAQ accordion, prototype form handling, footer year.
+- `assets/` — self-contained copies of brand assets (favicon, og-image, logo) + reserved space for real photography.
 
-### Homepage sections
-Header (sticky) · Hero · Services (4 cards) · Why Choose Devine · How It Works
-· Testimonials · Careers / "Become a Caregiver" · Contact (info + form + map) · Footer.
+### Pages / nav
+Home · About · Services · Careers · FAQ · Contact (+ "Call Now" button).
+
+---
+
+## 📧 TODO — email / form delivery (decide later)
+The site has **two forms** (a general Contact form on `index.html` + `contact.html`,
+and an **Employment Application** on `careers.html`). They don't send yet. Before launch,
+decide which inbox each should deliver to and wire them up as native Squarespace Form blocks:
+
+- **Contact / service inquiries →** `______________` (default assumed: Devinehands@icloud.com)
+- **Employment applications →** `______________` (same inbox, or a separate hiring address?)
+- Optional: an auto-reply "we got your message" confirmation to the sender.
+
+> Jarred: confirm these addresses with Vernetta, then set the Form block recipients in Squarespace.
 
 ---
 
