@@ -5,3 +5,6 @@
 _*.png
 _*.html
 *.tmp
+
+# Exported PDFs (deliverables, regenerated on demand)
+*.pdf

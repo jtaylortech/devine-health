@@ -332,3 +332,20 @@ img,svg{max-width:100%}
   .contact-page-grid{grid-template-columns:1fr}
   .form-grid{grid-template-columns:1fr}
 }
+
+/* ============================================================
+   Print / PDF export
+   ============================================================ */
+@media print {
+  *{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  @page{ size:1180px 1670px; margin:0; }
+  html{ scroll-behavior:auto; }
+  .topbar,.header{ position:static; }
+  .nav-toggle,.skip{ display:none !important; }
+  .header{ box-shadow:none; border-bottom:1px solid var(--line); }
+  a{ text-decoration:none; }
+  /* Keep components from splitting across pages */
+  .card,.quote,.step,.value,.feature,.split,.acc-item,.cta-band,.form,.app-form{ break-inside:avoid; }
+  .section{ padding-block:2.6rem; }
+  .hero .container,.page-hero .container{ padding-block:3rem; }
+}
