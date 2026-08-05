@@ -8,3 +8,6 @@ _*.html
 
 # Exported PDFs (deliverables, regenerated on demand)
 *.pdf
+
+# Local drafts
+EMAIL-DRAFT.txt
