@@ -186,7 +186,7 @@ img,svg{max-width:100%}
 .info-list a{color:var(--ink);text-decoration:none;font-weight:600}
 .info-list a:hover{color:var(--teal-dark)}
 .info-list .muted{color:var(--slate);font-weight:400;font-size:.95rem}
-.map{margin-top:1.6rem;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
+.map{margin-top:1.6rem;width:100%;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
   background:repeating-linear-gradient(45deg,#eef4f8,#eef4f8 12px,#e6eef4 12px,#e6eef4 24px);
   display:flex;align-items:center;justify-content:center;color:var(--slate);font-size:.9rem;text-align:center;padding:1rem}
 
@@ -221,8 +221,8 @@ img,svg{max-width:100%}
 .social svg{width:18px;height:18px}
 
 /* ---- Placeholder flag (visible reminder for review) ---- */
-.flag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
-  color:#8a5a00;background:#ffeec2;border:1px solid #f2d492;border-radius:6px;padding:.1rem .45rem;vertical-align:middle}
+.flag{display:none !important}
+.ph-tag,.ph-label{display:none !important}
 
 /* ============================================================
    Responsive
