@@ -55,16 +55,19 @@ Home · About · Services · Careers · FAQ · Contact (+ "Call Now" button).
 
 ---
 
-## 📧 TODO — email / form delivery (decide later)
-The site has **two forms** (a general Contact form on `index.html` + `contact.html`,
-and an **Employment Application** on `careers.html`). They don't send yet. Before launch,
-decide which inbox each should deliver to and wire them up as native Squarespace Form blocks:
+## 📧 Forms → email (wired via FormSubmit)
+Both the Contact form (`index.html` + `contact.html`) and the Employment Application
+(`careers.html`) POST to **FormSubmit** and deliver to **Devinehands@icloud.com** —
+no account, no API key, free.
 
-- **Contact / service inquiries →** `______________` (default assumed: Devinehands@icloud.com)
-- **Employment applications →** `______________` (same inbox, or a separate hiring address?)
-- Optional: an auto-reply "we got your message" confirmation to the sender.
-
-> Jarred: confirm these addresses with Vernetta, then set the Form block recipients in Squarespace.
+**⚠️ One-time activation (required once):** the first time any form is submitted,
+FormSubmit emails an *"Activate Form"* link to **Devinehands@icloud.com**. Vernetta
+must click it once; after that, all submissions arrive normally.
+- Give Vernetta a heads-up so she doesn't miss/ignore that email.
+- After submitting, users are redirected to `thank-you.html`.
+- Spam protection: honeypot field + FormSubmit captcha.
+- To hide the raw email in page source later, swap the endpoint for a FormSubmit
+  alias string (generated after activation) — optional.
 
 ---
 
