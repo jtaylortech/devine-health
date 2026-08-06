@@ -187,8 +187,17 @@ img,svg{max-width:100%}
 .info-list a:hover{color:var(--teal-dark)}
 .info-list .muted{color:var(--slate);font-weight:400;font-size:.95rem}
 .map{margin-top:1.6rem;width:100%;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);
-  background:repeating-linear-gradient(45deg,#eef4f8,#eef4f8 12px,#e6eef4 12px,#e6eef4 24px);
-  display:flex;align-items:center;justify-content:center;color:var(--slate);font-size:.9rem;text-align:center;padding:1rem}
+  text-decoration:none;position:relative;
+  background:radial-gradient(circle at 28% 30%,rgba(63,169,196,.14),transparent 42%),
+             radial-gradient(circle at 76% 68%,rgba(224,168,46,.14),transparent 46%),
+             linear-gradient(135deg,#eef4f8,#e0ecf3);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.45rem;
+  color:var(--navy);font-size:.9rem;text-align:center;padding:1.2rem;transition:box-shadow .2s ease,transform .15s ease}
+.map:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+.map:focus-visible{outline:3px solid var(--gold-light);outline-offset:3px}
+.map svg{width:40px;height:40px;color:var(--teal-dark)}
+.map .map-addr{font-weight:600;font-size:1rem;color:var(--navy)}
+.map .map-cta{font-weight:700;font-size:.9rem;color:var(--teal-dark)}
 
 .form{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:1.9rem;box-shadow:var(--shadow)}
 .form .field,.app-form .field{margin-bottom:1.1rem}
