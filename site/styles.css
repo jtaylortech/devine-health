@@ -60,9 +60,9 @@ img,svg{max-width:100%}
 .section--navy h2,.section--navy h3{color:#fff}
 .center{text-align:center}
 .lead{font-size:1.2rem;color:var(--slate);max-width:56ch}
-.center .lead{margin-inline:auto}
+.center .lead,.lead.center{margin-inline:auto}
 .section-head{max-width:64ch}
-.center .section-head{margin-inline:auto}
+.center .section-head,.section-head.center{margin-inline:auto}
 
 /* ---- Buttons ---- */
 .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--sans);
