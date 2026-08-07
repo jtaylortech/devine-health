@@ -22,25 +22,6 @@
   // --- Footer year ---
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
-
-  // --- Prototype forms (no backend; Squarespace handles delivery live) ---
-  document.querySelectorAll("form[data-prototype]").forEach(function (f) {
-    var status = f.querySelector(".form-status");
-    f.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (!f.checkValidity()) {
-        if (status) status.textContent = "Please complete the required fields.";
-        f.reportValidity();
-        return;
-      }
-      if (status) {
-        status.textContent =
-          "Thank you! (Design preview — connect a Squarespace form to receive this.)";
-      }
-      f.reset();
-    });
-  });
-
   // --- FAQ accordion (accessible) ---
   document.querySelectorAll(".acc-btn").forEach(function (btn) {
     var panel = document.getElementById(btn.getAttribute("aria-controls"));

@@ -1,16 +1,20 @@
-# Devine Health — Website Design Package
+# Devine Health — Website
 
-Initial design and brand assets for **Devine Health Consumer Directed Services**
-(St. Louis, MO). Built to be rebuilt on **Squarespace** — the client owns the
-Squarespace account, domain, and billing; this repo is the design + asset source.
+Website and brand assets for **Devine Health Consumer Directed Services** (Florissant / St. Louis, MO).
 
 > Tagline: **"Empowering Independence Through Compassionate Care."**
 
+**Live:** https://devinehealthcds.com
+
+- Static site (HTML/CSS/JS), hosted on **GitHub Pages**, custom domain via `site/CNAME`.
+- **Auto-deploys on every push to `main`** (`.github/workflows/pages.yml`).
+- Vernetta Collard owns the **domain** (registered at Squarespace); DNS points the apex + `www` at GitHub Pages.
+
 ---
 
-## Preview the homepage
+## Local preview
 
-No build step — it's a static page. From this folder:
+No build step:
 
 ```bash
 cd site
@@ -18,9 +22,7 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-Or just open `site/index.html` directly in a browser. Fonts load from Google
-Fonts (Cormorant Garamond + Inter), so keep an internet connection for the
-intended look.
+Fonts load from Google Fonts (Cormorant Garamond + Inter), so keep an internet connection for the intended look.
 
 ---
 
@@ -32,81 +34,60 @@ intended look.
 | `logo-mark.svg` | Icon only (gold figure + teal cupped hands). Scalable, transparent. |
 | `logo-lockup.svg` | Full logo, **navy** text — for light backgrounds. |
 | `logo-lockup-light.svg` | Full logo, **white** text — for navy/dark backgrounds. |
-| `favicon.svg` | Browser/tab icon (SVG). |
-| `favicon-32.png`, `favicon-512.png` | Raster favicons. |
+| `favicon.svg`, `favicon-32.png`, `favicon-512.png` | Browser/tab icons. |
 | `apple-touch-icon.png` | 180×180 iOS home-screen icon. |
-| `logo-mark.png` | 512px transparent mark for uploads that need PNG. |
-| `og-image.png` | 1200×630 social-share image (navy, logo + tagline). |
+| `logo-mark.png` | 512px transparent mark (PNG). |
+| `og-image.png` | 1200×630 social-share image. |
 | `colors.md` | Brand color tokens + typography notes. |
 
-### `site/` — website prototype (multi-page)
-- `index.html` — homepage (hero, services, why, how, testimonials, careers band, contact).
+The logo is a clean **vector recreation** of the business-card mark (no original source files exist), and is the official logo.
+
+### `site/` — the website
+- `index.html` — home (hero, services, why-choose, how-it-works, careers band, contact).
 - `about.html` — story, "What is CDS?", values.
 - `services.html` — detailed section per service.
-- `careers.html` — Become a Caregiver + full employment application form.
+- `careers.html` — Become a Caregiver + employment application form.
 - `faq.html` — accessible accordion of common CDS questions.
-- `contact.html` — contact info, map placeholder, contact form.
+- `contact.html` — contact info, Google Maps directions card, contact form.
+- `thank-you.html` — post-submission confirmation (form redirect target).
 - `styles.css` — brand-tokened, mobile-first stylesheet (responsive to 320px, WCAG-AA).
-- `main.js` — shared nav toggle, FAQ accordion, prototype form handling, footer year.
-- `assets/` — self-contained copies of brand assets (favicon, og-image, logo) + reserved space for real photography.
+- `main.js` — nav toggle, FAQ accordion, footer year, careers day-summary.
+- `assets/` — self-contained brand assets + reserved space for real photography.
+- `CNAME` — custom domain for GitHub Pages.
 
-### Pages / nav
-Home · About · Services · Careers · FAQ · Contact (+ "Call Now" button).
-
----
-
-## 📧 Forms → email (wired via FormSubmit)
-Both the Contact form (`index.html` + `contact.html`) and the Employment Application
-(`careers.html`) POST to **FormSubmit** and deliver to **Devinehands@icloud.com** —
-no account, no API key, free.
-
-**⚠️ One-time activation (required once):** the first time any form is submitted,
-FormSubmit emails an *"Activate Form"* link to **Devinehands@icloud.com**. Vernetta
-must click it once; after that, all submissions arrive normally.
-- Give Vernetta a heads-up so she doesn't miss/ignore that email.
-- After submitting, users are redirected to `thank-you.html`.
-- Spam protection: honeypot field + FormSubmit captcha.
-- To hide the raw email in page source later, swap the endpoint for a FormSubmit
-  alias string (generated after activation) — optional.
+Nav: Home · About · Services · Careers · FAQ · Contact (+ "Call Now").
 
 ---
 
-## ⚠️ Content to confirm before launch
-These are flagged in the page with a small **highlighted badge**:
+## 📧 Forms → email (FormSubmit)
+The Contact form (`index.html` + `contact.html`) and the Employment Application (`careers.html`)
+POST to **FormSubmit** and deliver to **Devinehands@icloud.com** — free, no account, no API key.
 
-- **ZIP code** for 12405 Halls Ferry Rd, Suite 325 (assumed St. Louis, MO).
-- **Business hours** (placeholder: Mon–Fri 9am–5pm).
-- **Testimonials** — currently sample text. Replace with real client/caregiver reviews.
-- **Hero + service photos** — placeholders shown. Supply real photos or approve stock.
-- **Social links** — footer icons point to `#` until real URLs are provided.
-- **Map** — placeholder; live site embeds Google Maps pinned to the office.
-- **Licensing wording** — "Licensed & compliant" / "Missouri CDS standards" should be
-  reviewed by Vernetta for accuracy before publishing.
-
-Confirmed facts used (from the business card):
-- Services: Personal Care Assistance · Homemaker Services · Respite Care · CDS Program Enrollment Support
-- Phone: (314) 221-3495 · Email: Devinehands@icloud.com
-- Contact: Vernetta Collard · Address: 12405 Halls Ferry Rd, Suite 325
+- **⚠️ One-time activation:** the first submission triggers an *"Activate Form"* email to
+  **Devinehands@icloud.com**. Vernetta must click it once; after that every submission arrives.
+  (One activation covers all forms — they share the same recipient.)
+- Submissions redirect to `thank-you.html`; emails use FormSubmit's table template.
+- Spam protection: honeypot (`_honey`) + FormSubmit captcha.
+- Careers "Days available" is composed into one clean field by `main.js` before submit
+  (e.g. `Mon, Wed, Fri`).
 
 ---
 
-## Squarespace handoff notes
-- **Logo:** upload `logo-lockup-light.svg` (or `logo-mark.svg` + live text) for a navy
-  header; use `logo-lockup.svg` on light headers.
-- **Favicon:** upload `favicon-512.png` (Design → Logo & Title → Browser Icon).
-- **Social image:** upload `og-image.png` (Settings → Social Sharing).
-- **Colors:** enter the hex values from `brand/colors.md` into the Squarespace color palette.
-- **Fonts:** set headings to Cormorant Garamond, body to Inter.
-- **Contact form:** rebuild with a native Squarespace Form block so submissions email
-  Devinehands@icloud.com. (The prototype form is intentionally non-sending.)
-- This HTML/CSS is the **design reference**; Squarespace pages are rebuilt with blocks,
-  not by pasting this code.
+## Confirmed content
+- **Services:** Personal Care Assistance · Homemaker Services · Respite Care · CDS Program Enrollment Support
+- **Phone:** (314) 221-3495 · **Email:** Devinehands@icloud.com
+- **Contact:** Vernetta Collard
+- **Office:** 12405 Halls Ferry Rd, Suite 325, Florissant, MO 63033
+- **Hours:** Mon–Fri, 8:00am–4:00pm
+
+## To add later (when the client provides)
+- Real **staff/client/office photos** (hero + services + about currently use branded panels).
+- Real **testimonials** (the sample section was removed for launch — can be re-added).
+- **Social media** links (icons removed until accounts exist).
+- Review of **licensing wording** ("Licensed & compliant" / "Missouri CDS standards").
 
 ---
 
-## Notes
-- The prototype contact form does not submit anywhere (static preview). No backend,
-  no data collection.
-- The logo is a clean vector **recreation** of the business-card mark. If the original
-  designer has source files (AI/EPS/SVG), those remain the ideal master; this vector is
-  production-ready in the meantime.
+## Deploying changes
+Edit files in `site/`, commit, and push to `main` — GitHub Actions publishes to
+https://devinehealthcds.com within ~30s. Verify against the live URL (append `?cb=<ts>` to bust cache).
