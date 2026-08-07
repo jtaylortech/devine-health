@@ -63,4 +63,19 @@
       });
     }, 120);
   });
+
+  // --- Careers: combine selected day checkboxes into one clean field ---
+  var dayChecks = document.querySelectorAll(".day-check");
+  var daysSummary = document.getElementById("days-summary");
+  if (daysSummary && dayChecks.length) {
+    var updateDays = function () {
+      var selected = [];
+      dayChecks.forEach(function (c) { if (c.checked) selected.push(c.value); });
+      daysSummary.value = selected.join(", ");
+    };
+    dayChecks.forEach(function (c) { c.addEventListener("change", updateDays); });
+    var dform = daysSummary.closest("form");
+    if (dform) dform.addEventListener("submit", updateDays);
+    updateDays();
+  }
 })();
